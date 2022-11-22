@@ -14,7 +14,7 @@
     initSqlJs({
         locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/${file}`
     }).then(async function(SQL) {
-      let sqlFilePath = "/sqlite3_wasm/mydb.sqlite";
+      let sqlFilePath = "/fiddle.sqlite3";
       const dataPromise = await fetch(sqlFilePath).then(res => res.arrayBuffer());
       const u8array = new Uint8Array(dataPromise);
       const db = new SQL.Database(new Uint8Array(u8array));
